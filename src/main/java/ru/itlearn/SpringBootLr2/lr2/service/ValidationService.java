@@ -1,6 +1,6 @@
 package ru.itlearn.SpringBootLr2.lr2.service;
 
-import jakarta.validation.ValidationException;
+
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import ru.itlearn.SpringBootLr2.lr2.exception.ValidationFailedException;

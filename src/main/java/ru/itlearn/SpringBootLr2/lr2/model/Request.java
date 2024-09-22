@@ -1,9 +1,6 @@
 package ru.itlearn.SpringBootLr2.lr2.model;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,20 +11,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Request {
+    @NotBlank
+    @Size(max = 32)
     private String uid;
+    @NotBlank
+    @Size(max = 32)
     private String operationUid;
     private String systemName;
+    @NotBlank
     private String systemTime;
     private String source;
+    @Min(1)
+    @Max(100000)
     private int communicationId;
     private int templateId;
     private int productCode;
     private int smsCode;
 
-    public boolean isValid() {
-        return uid != null && !uid.isEmpty()
-                && operationUid != null && !operationUid.isEmpty()
-                && systemTime != null && !systemTime.isEmpty()
-                && communicationId > 0;
-    }
 }
